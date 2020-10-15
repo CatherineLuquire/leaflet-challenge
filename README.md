@@ -39,8 +39,8 @@ Usage:
   * Legend: color legend details the depth of the earthquake epicenter. 
   * Radius displays magnitude.
   * Click on circle markers to see information on the time and location of the earthquake event.
-2. Zoom Features: select plus or minus buttons in top left of map to zoom in and out.
-3. Click and drag to move the map
+3. Zoom Features: select plus or minus buttons in top left of map to zoom in and out.
+4. Click and drag to move the map
 
 
 ## Development Process
