@@ -32,6 +32,7 @@ Installation:
 4. Link Leaflet js script and d3 script into index body for javascript and leaflet functionality.
 5. Reference static/js/logic.js in index body to connect to javascript file. 
 6. Reference static/js/config.js in index of body to call and safely store Mapbox API key.
+7. Update API key to working key for usage. 
 
 Usage:
 1. Overlay Features: select map option to change display map. Select Earthquakes and/or Faultlines features to visualize earthquake and tectonic plate data. 
@@ -45,11 +46,28 @@ Usage:
 
 ## Development Process
 
-* Used d3 to bind the data to the HTML document, then built an interactive scatterplot to visualize demographic data.  
+1. Created map and overlay layer variables, then created a map variable and added layers to the map. Created legend and used the DomUtil function to add different grades within the legend. Looped through the grades and used the circleColor function to return proper colors with proper depths, then added to the map. 
+2. Used d3.json to create the faultline layer, referencing github usercontent json data. The geoJSON function was used to add the faultlines layer. 
+3. Used d3.json to query the USGS earthquake data and performed the following within the query:
+ * Called the createFeatures function on data.features, then built functions within the query to build into the  createFeatures function:
+  * styleInto function to style the circle markers, which calls the radiusSize and circleColor functions:
+   * radiusSize is a function of magnitude, multiplied by 5 to display larger on the map
+   * circleColor is a function of depth, with each range being assigned a different color that corresponds with the legend. 
+  * Built the createFeatures function once the framework functions were complete:
+   * built onEachFeature to bind the html popup to circle markers with time and place of the earthquakes.
+   * used geoJSON pointToLayer function to: 
+    * return circle markers locations using latitude and longitude. 
+    * call styleInto function to style circle markers.
+    * call onEachFeature function to bind html popup to circle makers.
+    * added to earthquake layer
+  * added earthquakes to overlay map layer
+   
 
 ## Data Sources
-* [Link to 2014 Census Data](D3_data_journalism/assets/data/data.csv)
-* Data sourced from: US Census Data. Retrieved from: [https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml](https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml)
+* Earthquake data sourced from US Geological Survey.
+Retrieved from: [https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson]
+* Plate tectonic data source from Hugo Ahlenius, Github username fraxen.
+Retrieved from: [https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json]
 
 ## Contact
 Created by [Katy Luquire](https://github.com/CatherineLuquire)
