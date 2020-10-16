@@ -29,7 +29,7 @@ Created interactive map to visualize global earthquake information and with the 
 Installation: 
 1. Link Leaflet CSS stylesheet in index header for map visualization and functionality.
 2. Link d3 CDN script into index header for high-quality content with fast load speeds.
-3. Link style.css HTML and javascript styling.
+3. Link style.css into header of HTML for javascript styling.
 4. Link Leaflet js script and d3 script into index body for javascript and leaflet functionality.
 5. Reference static/js/logic.js in index body to connect to javascript file. 
 6. Reference static/js/config.js in index of body to call and safely store Mapbox API key.
@@ -59,10 +59,10 @@ Usage:
   * Built the createFeatures function once the framework functions were complete:
   1. built onEachFeature to bind the html popup to circle markers with time and place of the earthquakes.
   2. Used geoJSON pointToLayer function to: 
-    * return circle markers locations using latitude and longitude. 
-    * call styleInto function to style circle markers.
-    * call onEachFeature function to bind html popup to circle makers.
-    * added to earthquake layer
+ * return circle markers locations using latitude and longitude. 
+ * call styleInto function to style circle markers.
+ * call onEachFeature function to bind html popup to circle makers.
+ * added to earthquake layer
   3. Added earthquakes to overlay map layer
  
  ![Tectonic Plates Demo](images/sat_tectonic_plates.png)
