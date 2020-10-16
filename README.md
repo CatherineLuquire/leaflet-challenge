@@ -53,17 +53,17 @@ Usage:
 2. Used d3.json to create the faultline layer, referencing github usercontent json data. The geoJSON function was used to add the faultlines layer. 
 3. Used d3.json to query the USGS earthquake data and performed the following within the query:
  * Called the createFeatures function on data.features, then built functions within the query to build into the  createFeatures function:
-  * styleInto function to style the circle markers, which calls the radiusSize and circleColor functions:
-   * radiusSize is a function of magnitude, multiplied by 5 to display larger on the map
-   * circleColor is a function of depth, with each range being assigned a different color that corresponds with the legend. 
-  * Built the createFeatures function once the framework functions were complete:
-  1. built onEachFeature to bind the html popup to circle markers with time and place of the earthquakes.
-  2. Used geoJSON pointToLayer function to: 
+ * styleInto function to style the circle markers, which calls the radiusSize and circleColor functions:
+ * radiusSize is a function of magnitude, multiplied by 5 to display larger on the map
+ * circleColor is a function of depth, with each range being assigned a different color that corresponds with the legend. 
+ * Built the createFeatures function once the framework functions were complete:
+ * Built onEachFeature to bind the html popup to circle markers with time and place of the earthquakes.
+ * Used geoJSON pointToLayer function to: 
  * return circle markers locations using latitude and longitude. 
  * call styleInto function to style circle markers.
  * call onEachFeature function to bind html popup to circle makers.
  * added to earthquake layer
-  3. Added earthquakes to overlay map layer
+ * Added earthquakes to overlay map layer
  
  ![Tectonic Plates Demo](images/sat_tectonic_plates.png)
 
