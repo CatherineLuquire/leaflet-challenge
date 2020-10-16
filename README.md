@@ -23,6 +23,7 @@ Created interactive map to visualize global earthquake information and with the 
   * d3 cdn version 4.5.0 
 * CSS
   * Leaflet - version 1.6.0
+* Mapbox - version 1.12.0
 
 ## Installation and Usage
 Installation: 
@@ -42,6 +43,8 @@ Usage:
   * Click on circle markers to see information on the time and location of the earthquake event.
 3. Zoom Features: select plus or minus buttons in top left of map to zoom in and out.
 4. Click and drag to move the map
+![Earthquakes and Plates Demo](images/dark_quakes_plates.png)
+
 
 
 ## Development Process
@@ -54,14 +57,15 @@ Usage:
    * radiusSize is a function of magnitude, multiplied by 5 to display larger on the map
    * circleColor is a function of depth, with each range being assigned a different color that corresponds with the legend. 
   * Built the createFeatures function once the framework functions were complete:
-   * built onEachFeature to bind the html popup to circle markers with time and place of the earthquakes.
-   * used geoJSON pointToLayer function to: 
+  1. built onEachFeature to bind the html popup to circle markers with time and place of the earthquakes.
+  2. Used geoJSON pointToLayer function to: 
     * return circle markers locations using latitude and longitude. 
     * call styleInto function to style circle markers.
     * call onEachFeature function to bind html popup to circle makers.
     * added to earthquake layer
-  * added earthquakes to overlay map layer
-   
+  3. Added earthquakes to overlay map layer
+ 
+ ![Tectonic Plates Demo](images/sat_tectonic_plates.png)
 
 ## Data Sources
 * Earthquake data sourced from US Geological Survey.
